@@ -1,0 +1,39 @@
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd"
+	version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd
+		                        http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd">
+	<portlet id="testportlet">
+
+		<description xml:lang="EN">Model driven test portlet</description>
+		<portlet-name>testportlet</portlet-name>
+		<display-name xml:lang="EN">modeldriven</display-name>
+
+		<portlet-class>org.apache.struts2.portlet.dispatcher.Jsr168Dispatcher</portlet-class>
+		<init-param>
+			<name>defaultViewAction</name>
+			<value>execute</value>
+		</init-param>
+		<init-param>
+			<name>portletNamespace</name>
+			<value>/mainPortlet</value>
+		</init-param>
+		<init-param>
+			<name>viewNameSpace</name>
+			<value>/view</value>
+		</init-param>
+		<init-param>
+			<name>viewNameSpace</name>
+			<value>/edit</value>
+		</init-param>
+
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+
+		<portlet-info>
+			<title>Customer view</title>
+		</portlet-info>
+
+	</portlet>
+</portlet-app>

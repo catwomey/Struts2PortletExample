@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>StrutsModelDrivenSerial</groupId>
+	<artifactId>StrutsModelDrivenSerial</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<properties>
+		<spring.version>RELEASE</spring.version>
+		<pluto.version>1.1.7</pluto.version>
+		<portlet-api.version>1.0</portlet-api.version>
+		<servlet-api.version>2.4</servlet-api.version>
+		<jsp-api.version>2.0</jsp-api.version>
+		<struts2.version>2.3.3</struts2.version>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>tomcat-maven-plugin</artifactId>
+				<version>1.1</version>
+				<configuration>
+					<username>tomcat</username>
+					<password>tomcat</password>
+				</configuration>
+			</plugin>
+		</plugins>
+
+	</build>
+	<!-- Struts 2 -->
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-core</artifactId>
+			<version>${struts2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-portlet-plugin</artifactId>
+			<version>${struts2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-config-browser-plugin</artifactId>
+			<version>${struts2.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-junit-plugin</artifactId>
+			<version>${struts2.version}</version>
+			<type>jar</type>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>${servlet-api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.portlet</groupId>
+			<artifactId>portlet-api</artifactId>
+			<version>1.0</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+</project>
