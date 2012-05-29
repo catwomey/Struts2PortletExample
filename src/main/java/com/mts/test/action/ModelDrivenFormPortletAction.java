@@ -10,14 +10,12 @@ import javax.portlet.PortletRequest;
 import javax.portlet.PortletResponse;
 import javax.portlet.PortletSession;
 
-
 import org.apache.struts2.interceptor.ParameterAware;
 import org.apache.struts2.interceptor.SessionAware;
 import org.apache.struts2.interceptor.validation.SkipValidation;
 import org.apache.struts2.portlet.interceptor.PortletPreferencesAware;
 import org.apache.struts2.portlet.interceptor.PortletRequestAware;
 import org.apache.struts2.portlet.interceptor.PortletResponseAware;
-import org.omg.CORBA.DynAnyPackage.Invalid;
 
 import com.mts.test.model.TestModel;
 import com.opensymphony.xwork2.ActionSupport;
