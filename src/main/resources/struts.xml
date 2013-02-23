@@ -8,20 +8,29 @@
 	<package name="main" extends="struts-portlet-default"
 		namespace="/mainPortlet">
 		<action name="execute" class="com.mts.test.action.ModelDrivenFormPortletAction">
-			<result name="input">/WEB-INF/content/mainPortlet/edit/index.jsp</result>
+			<result name="input">/WEB-INF/content/mainPortlet/edit/index.jsp
+			</result>
 			<param name="portletMode">edit</param>
 		</action>
-	
+
 		<action name="success" class="com.mts.test.action.ModelDrivenFormPortletAction">
-			<result name="input">/WEB-INF/content/mainPortlet/view/success.jsp</result>
-			<result name="success">/WEB-INF/content/mainPortlet/view/success.jsp</result>
+			<result name="input">/WEB-INF/content/mainPortlet/view/success.jsp
+			</result>
+			<result name="success">/WEB-INF/content/mainPortlet/view/success.jsp
+			</result>
 		</action>
-		<action name="submitForm" class="com.mts.test.action.ModelDrivenFormPortletAction">
-			<result name="input" type="redirectAction"><param name="actionName">success</param><param name="portletMode">view</param></result>
-			<result name="success" type="redirectAction"><param name="actionName">execute</param><param name="portletMode">edit</param></result>
-		
-			<interceptor-ref name="portletDefaultStack"/>
-			
+		<action name="submitForm" class="com.mts.test.action.ModelDrivenFormPortletAction" method="submitForm">
+			<result name="input" type="redirectAction">
+				<param name="actionName">success</param>
+				<param name="portletMode">view</param>
+			</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">execute</param>
+				<param name="portletMode">edit</param>
+			</result>
+
+			<interceptor-ref name="portletDefaultStack" />
+
 		</action>
 	</package>
 

@@ -28,59 +28,28 @@ import com.opensymphony.xwork2.validator.annotations.VisitorFieldValidator;
  * 
  */
 public class ModelDrivenFormPortletAction extends ActionSupport implements
-		Preparable, ParameterAware, PortletPreferencesAware,
-		PortletRequestAware, PortletResponseAware, ModelDriven<TestModel>,
+	 PortletPreferencesAware, ModelDriven<TestModel>,
 		SessionAware {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -7931085835164992623L;
 	private PortletRequest portletRequest;
-	private PortletResponse portletResponse;
-	private PortletSession portletSession;
-	private PortletPreferences prefs;
-	private Map<String, String[]> parameters;
-	private TestModel model;
+	
+	private TestModel model = new TestModel();
 	private Map<String, Object> session;
 
 	@VisitorFieldValidator()
 	public TestModel getModel() {
-		// model = (TestModel) portletSession.getAttribute(
-		// TestModel.SESSION, PortletSession.PORTLET_SCOPE);
-		model = (TestModel) session.get(TestModel.SESSION);
-		if (model == null) {
-			model = new TestModel();
-		}
-		// this.portletSession.setAttribute(TestModel.SESSION, model,
-		// PortletSession.PORTLET_SCOPE);
-		this.session.put(TestModel.SESSION, model);
 		return model;
 	}
 
-	public void setPortletResponse(PortletResponse response) {
-		portletResponse = response;
-
-	}
-
-	public void setPortletRequest(PortletRequest request) {
-		portletRequest = request;
-
-	}
-
+	
 	public void setPortletPreferences(PortletPreferences prefs) {
-		this.prefs = prefs;
 
 	}
 
-	public void setParameters(Map<String, String[]> parameters) {
-		this.parameters = parameters;
 
-	}
-
-	public void prepare() throws Exception {
-		portletSession = portletRequest.getPortletSession();
-
-	}
 
 	public String execute() {
 		return INPUT;
@@ -94,9 +63,6 @@ public class ModelDrivenFormPortletAction extends ActionSupport implements
 	}
 
 	public String submitForm() {
-//		this.portletSession.setAttribute(TestModel.SESSION, model,
-//				PortletSession.PORTLET_SCOPE);
-		this.session.put(TestModel.SESSION, model);
 
 		return SUCCESS;
 
@@ -106,4 +72,6 @@ public class ModelDrivenFormPortletAction extends ActionSupport implements
 		this.session = session;
 
 	}
+
+
 }

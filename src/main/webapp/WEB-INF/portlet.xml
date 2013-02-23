@@ -22,7 +22,7 @@
 			<value>/view</value>
 		</init-param>
 		<init-param>
-			<name>viewNameSpace</name>
+			<name>editNameSpace</name>
 			<value>/edit</value>
 		</init-param>
 

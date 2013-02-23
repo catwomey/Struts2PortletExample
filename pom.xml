@@ -7,11 +7,11 @@
 	<packaging>war</packaging>
 	<properties>
 		<spring.version>RELEASE</spring.version>
-		<pluto.version>1.1.7</pluto.version>
+		<pluto.version>2.1</pluto.version>
 		<portlet-api.version>1.0</portlet-api.version>
 		<servlet-api.version>2.4</servlet-api.version>
 		<jsp-api.version>2.0</jsp-api.version>
-		<struts2.version>2.3.3</struts2.version>
+		<struts2.version>2.3.8</struts2.version>
 	</properties>
 	<build>
 		<plugins>
@@ -67,9 +67,13 @@
 		<dependency>
 			<groupId>javax.portlet</groupId>
 			<artifactId>portlet-api</artifactId>
-			<version>1.0</version>
-			<type>jar</type>
+			<version>2.0</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
 		</dependency>
 	</dependencies>
 </project>
